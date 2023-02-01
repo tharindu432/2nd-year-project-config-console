@@ -1,0 +1,117 @@
+.header1 {
+  color: black;
+}
+.thirdbackground{
+  background-color: grey;
+  padding-top: 20px;
+  border-radius: 5px;
+  border: solid;
+  border-color: transparent;
+  height: 750px;
+  height: 80vh;
+}
+.secondbackground{
+  background-color: whitesmoke;
+  border: solid;
+  border-color: transparent;
+  width: 100%;
+  margin-top: 2px;
+  border-radius: 5px;
+}
+.Row{
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Box{
+  border-radius: 3px;
+  border: solid;
+  border-color: grey;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 20%;
+}
+.Box1{
+  border-radius: 3px;
+  border: solid;
+  border-color: grey;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 240px;
+  width: 20%;
+}
+.Box3{
+  border-radius: 3px;
+  border: solid;
+  border-color: grey;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 20%;
+}
+
+.Upper{
+  background-color: rgb(181, 165, 165);
+  padding-top: 10px;
+  vertical-align: middle;
+  
+}
+.Heads{
+  display: flex;
+  margin-top: 0px;
+}
+.head1{
+  margin-right: 0px;
+  color: grey;
+}
+.head2{
+  color: black;
+}
+.notification {
+  background-color: #1ab394;
+  color: white;
+  text-decoration: none;
+  padding: 5px 16px;
+  position: relative;
+  border-radius: 3px;
+}
+.Notify{
+  font-size: 12px;
+  padding-top: 12px;
+  vertical-align: middle;
+  margin-left: 50px;
+}
+.notification:hover {
+  background: #2b8774;
+}
+.notification .badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  padding: 2px 7px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+.Middle{
+  background-color: whitesmoke;
+  margin-top: -13.326px;
+}
+.Client{
+  color: grey;
+}
+.Content{
+  color: grey;
+}
+.ViewButton{
+  color: white;
+  background-color: #1ab394;
+  border-color: transparent;
+  width:100%; 
+}
+.ViewButton:hover{
+  background-color:#2b8774; 
+  cursor: pointer;
+}
+.Bottom{
+  background-color: whitesmoke;
+}

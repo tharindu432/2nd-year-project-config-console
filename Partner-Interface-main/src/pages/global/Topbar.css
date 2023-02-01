@@ -1,0 +1,29 @@
+.topbar{
+    background-color: rgba(243,243, 243);
+}
+.topright{
+    color: grey;
+}
+.logout{
+    margin-right: 10px;
+}
+.toprightbutton{
+    border-color: transparent;
+    border-style: solid;
+    background-color: rgba(243,243, 243);
+    cursor: pointer;
+}
+.inputbase{
+    color: black;
+    border-color: transparent;
+    background-color: rgb(243, 243, 243);
+    
+}
+.inputbase:focus{
+    outline-color: rgba(243,243, 243);
+}
+.thirdbox{
+    display:flex;
+    background-color: red;
+    border-radius: 1px;
+}
