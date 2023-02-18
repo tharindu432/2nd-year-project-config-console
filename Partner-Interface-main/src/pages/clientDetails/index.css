@@ -1,7 +1,7 @@
 .header1 {
   color: black;
 }
-.thirdbackground{
+.thirdbackground {
   background-color: grey;
   padding-top: 20px;
   border-radius: 5px;
@@ -10,7 +10,7 @@
   height: 750px;
   height: 80vh;
 }
-.secondbackground{
+.secondbackground {
   background-color: whitesmoke;
   border: solid;
   border-color: transparent;
@@ -18,12 +18,12 @@
   margin-top: 2px;
   border-radius: 5px;
 }
-.Row{
+.Row {
   display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.Box{
+.Box {
   border-radius: 3px;
   border: solid;
   border-color: grey;
@@ -31,16 +31,16 @@
   margin-bottom: 20px;
   width: 20%;
 }
-.Box1{
+.Box1 {
   border-radius: 3px;
   border: solid;
-  border-color: grey;
+  border-color: #808080;
   margin-right: 20px;
   margin-bottom: 20px;
   margin-left: 240px;
   width: 20%;
 }
-.Box3{
+.Box3 {
   border-radius: 3px;
   border: solid;
   border-color: grey;
@@ -49,22 +49,21 @@
   width: 20%;
 }
 
-.Upper{
-  background-color: rgb(181, 165, 165);
+.Upper {
+  background-color: #b5a5a5;
   padding-top: 10px;
   vertical-align: middle;
-  
 }
-.Heads{
+.Heads {
   display: flex;
   margin-top: 0px;
 }
-.head1{
+.head1 {
   margin-right: 0px;
-  color: grey;
+  color: #808080;
 }
-.head2{
-  color: black;
+.head2 {
+  color: #000000;
 }
 .notification {
   background-color: #1ab394;
@@ -74,7 +73,7 @@
   position: relative;
   border-radius: 3px;
 }
-.Notify{
+.Notify {
   font-size: 12px;
   padding-top: 12px;
   vertical-align: middle;
@@ -89,29 +88,29 @@
   right: -10px;
   padding: 2px 7px;
   border-radius: 50%;
-  background: red;
+  background: #ff0000;
   color: white;
 }
-.Middle{
-  background-color: whitesmoke;
+.Middle {
+  background-color: #f5f5f5;
   margin-top: -13.326px;
 }
-.Client{
-  color: grey;
+.Client {
+  color: #808080;
 }
-.Content{
-  color: grey;
+.Content {
+  color: #808080;
 }
-.ViewButton{
+.ViewButton {
   color: white;
   background-color: #1ab394;
   border-color: transparent;
-  width:100%; 
+  width: 100%;
 }
-.ViewButton:hover{
-  background-color:#2b8774; 
+.ViewButton:hover {
+  background-color: #2b8774;
   cursor: pointer;
 }
-.Bottom{
-  background-color: whitesmoke;
+.Bottom {
+  background-color: #f5f5f5;
 }

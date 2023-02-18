@@ -4,28 +4,87 @@ import { tokens } from "../theme";
 
 import logo from "../Images/logo192.png";
 
-const ClientBox = () => {
+const ClientBox = ({
+  first_name,
+  last_name,
+  designation,
+  email,
+  mobile_no,
+}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   return (
-    <div className="Box">
-      <div className="Upper">
-        <p className="Heads">
+    <div
+      className="Box"
+      style={{
+        color: "#000",
+        margin: "auto",
+        border: "2px solid #808080",
+        borderRadius: "3px",
+      }}
+    >
+      <div
+        className="Upper"
+        style={{
+          backgroundColor: "#b5a5a5",
+          paddingTop: "10px",
+          verticalAlign: "middle",
+        }}
+      >
+        <p className="d-flex mt-0">
           <div className="Head">
-            <b className="head1">General Manager</b>
+            <b className="mr-0" style={{ color: "#808080" }}>
+              {designation}
+            </b>
             <br />
-            <b className="head2">hSenid Business</b>
+            <b className="head2" style={{ color: "#000" }}>
+              hSenid Business
+            </b>
           </div>
-          <div className="Notify">
-            <a href="#" className="notification">
+          <div
+            className="Notify"
+            style={{
+              fontSize: "12px",
+              paddingTop: "12px",
+              verticalAlign: "middle",
+              marginLeft: "50px",
+            }}
+          >
+            <a
+              href="#"
+              className="notification"
+              style={{
+                backgroundColor: "#1ab394",
+                color: "#fff",
+                textDecoration: "none",
+                padding: "5px 16px",
+                position: "relative",
+                borderRadius: "3px",
+              }}
+            >
               <span>Notify</span>
-              <span class="badge">3</span>
+              <span
+                style={{
+                  position: "absolute",
+                  top: "-8px",
+                  right: "-10px",
+                  padding: "2px 7px",
+                  borderRadius: "50%",
+                  backgroundColor: "#ff0000",
+                  color: "#fff",
+                }}
+              >
+                3
+              </span>
             </a>
           </div>
         </p>
       </div>
-      <div className="Middle">
+      <div
+        className="Middle"
+        style={{ backgroundColor: "#f5f5f5", marginTop: "-13.326px" }}
+      >
         <div>
           <img
             className="IMG"
@@ -34,25 +93,37 @@ const ClientBox = () => {
             width="30"
             height="30"
           ></img>
-          <b className="Client">Client Profile Details</b>
+          <b className="Client" style={{ color: "#808080" }}>
+            Client Profile Details
+          </b>
         </div>
         <br />
-        <div className="Content">
+        <div className="Content" style={{ color: "#808080" }}>
           Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-          Pravindu
+          {first_name} {last_name}
           <br />
-          Designation : General
+          Designation :{designation}
           <br />
           Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-          sample@hSenidbiz.com
+          {email}
           <br />
-          Tel.No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: +94705561511
+          Tel.No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{mobile_no}
           <br />
           More details : <a href="https://www.w3schools.com/">View Client</a>
         </div>
       </div>
-      <div className="Bottom">
-        <button className="ViewButton">View Dashbord</button>
+      <div className="Bottom" style={{ backgroundColor: "#f5f5f5" }}>
+        <button
+          className="ViewButton"
+          style={{
+            color: "#fff",
+            backgroundColor: "#1ab394",
+            borderColor: "transparent",
+            width: "100%",
+          }}
+        >
+          View Dashbord
+        </button>
       </div>
     </div>
   );

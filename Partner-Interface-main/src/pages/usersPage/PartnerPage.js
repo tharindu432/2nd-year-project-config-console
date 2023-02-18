@@ -19,8 +19,14 @@ import Project from "../project";
 import Assignment from "../assignment";
 import Smtp from "../smpt";
 
-const PartnerPage = () => {
+const PartnerPage = (props) => {
   const [theme, colorMode] = useMode();
+
+  // Protected Routes (2023/02/04)
+  const logOut = () => {
+    props.onLogout();
+  };
+
   return (
     // <ColorModeContext.Provider value={colorMode}>
     <div className="whole">
@@ -29,7 +35,7 @@ const PartnerPage = () => {
         <MyProSidebarProvider>
           <div style={{ height: "100%", width: "100%" }}>
             <main>
-              <Topbar />
+              <Topbar onlogOut={logOut} />
               <Routes>
                 <Route path="/" element={<Partnerdashboard />} />
                 <Route path="clientDetails" element={<ClientDetails />} />

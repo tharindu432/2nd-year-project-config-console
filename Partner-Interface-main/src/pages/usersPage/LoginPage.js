@@ -8,7 +8,7 @@ const initialState = {
   password: "",
 };
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const [state, setState] = useState(initialState);
   const { username, password } = state;
   const navigate = useNavigate();
@@ -40,10 +40,14 @@ const LoginPage = () => {
               console.log(result[0].pro_id);
               console.log(result[0].desig_id);
               if (result[0].desig_id === 1) {
+                props.onLogin();
                 navigate("/superadmin/" + result[0].pro_id);
               } else if (result[0].desig_id === 2) {
+                props.onLogin();
                 navigate("/admin/" + result[0].pro_id);
               } else if (result[0].desig_id === 3) {
+                // Protected Routes (2023/02/04)
+                props.onLogin();
                 navigate("/partner/" + result[0].pro_id);
               }
             } else {

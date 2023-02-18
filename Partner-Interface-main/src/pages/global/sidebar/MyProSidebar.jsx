@@ -8,11 +8,15 @@ import { useSidebarContext } from "./sidebarContext";
 import { Link } from "react-router-dom";
 import { tokens } from "../../../theme";
 import { useTheme, Box, Typography, IconButton } from "@mui/material";
-import { BsFillGridFill } from "react-icons/bs";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import SwitchRightOutlinedIcon from "@mui/icons-material/SwitchRightOutlined";
 import SwitchLeftOutlinedIcon from "@mui/icons-material/SwitchLeftOutlined";
+
+import Options from "./Options";
+
+import NameUser from "../NameUser";
+
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -36,6 +40,7 @@ const MyProSidebar = () => {
   const [selected, setSelected] = useState("Dashboard");
   const { sidebarRTL, setSidebarRTL, sidebarImage } = useSidebarContext();
   const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
+
   return (
     <Box
       sx={{
@@ -103,12 +108,10 @@ const MyProSidebar = () => {
                 ml="5px"
               >
                 <b className="exampleuser">
-                  Example User <br />
+                  <NameUser />
                   <b className="menu">menu</b>
                 </b>
-                {/* <Typography className="sidebarup">
-                  <b className="exampleuser">Example User <br/><b className="menu">menu</b></b>
-                </Typography> */}
+
                 <IconButton
                   onClick={
                     broken ? () => toggleSidebar() : () => collapseSidebar()
@@ -134,42 +137,7 @@ const MyProSidebar = () => {
             </Box>
           )}
           <Box paddingLeft={collapsed ? undefined : "0%"} fontSize={12}>
-            <Item
-              title="Partner Dashboard"
-              to=""
-              icon={<BsFillGridFill />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              className="item"
-              title="Client Details"
-              to="clientdetails"
-              icon={<BsFillGridFill />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Project"
-              to="project"
-              icon={<BsFillGridFill />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Assignment"
-              to="assignment"
-              icon={<BsFillGridFill />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="SMTP"
-              to="smtp"
-              icon={<BsFillGridFill />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+            <Options />
           </Box>
         </Menu>
       </Sidebar>
