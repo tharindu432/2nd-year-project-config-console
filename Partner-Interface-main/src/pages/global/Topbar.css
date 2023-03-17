@@ -1,29 +1,31 @@
-.topbar{
-    background-color: rgba(243,243, 243);
+.topbar {
+  background-color: #ffffff;
 }
-.topright{
-    color: grey;
+.topright {
+  color: grey;
 }
-.logout{
-    margin-right: 10px;
+.logout {
+  margin-right: 10px;
 }
-.toprightbutton{
-    border-color: transparent;
-    border-style: solid;
-    background-color: rgba(243,243, 243);
-    cursor: pointer;
+.toprightbutton {
+  border-color: transparent;
+  border-style: solid;
+  background-color: #ffffff;
+  cursor: pointer;
 }
-.inputbase{
-    color: black;
-    border-color: transparent;
-    background-color: rgb(243, 243, 243);
-    
+.inputbase {
+  color: #676a6c;
+  border-color: transparent;
+  background-color: #ffffff;
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
-.inputbase:focus{
-    outline-color: rgba(243,243, 243);
+.inputbase:focus {
+  outline: transparent;
 }
-.thirdbox{
-    display:flex;
-    background-color: red;
-    border-radius: 1px;
+.thirdbox {
+  display: flex;
+  background-color: red;
+  border-radius: 1px;
 }

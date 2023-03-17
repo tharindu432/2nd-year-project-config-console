@@ -1,25 +1,17 @@
-import React from "react";
-/*
-const PartnerPage = () => {
-  return <div>Partner Page</div>;
-};
-
-export default PartnerPage;
-*/
-
-import { ColorModeContext, useMode } from "../../theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { Routes, Route } from "react-router-dom";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { useMode } from "../../theme";
+import SuperAdminDashboard from "../dashboard/SuperAdminDashboard";
 import { MyProSidebarProvider } from "../global/sidebar/sidebarContext";
-
 import Topbar from "../global/Topbar";
-import SuperAdmindashboard from "../dashboard/SuperAdminDashboard";
-import NewPartner from "../register/NewPartner";
-import NewClient from "../register/NewClient";
-import ClientDetails from "../clientDetails/ClientDetails";
-import Project from "../project";
-import Assignment from "../assignment";
-import Smtp from "../smpt";
+import ClientProfileManagment from "../Register/clientprofilemanagement";
+import RegisterNewClient from "../Register/registerNewClient";
+import RegisterNewPartner from "../Register/registerNewPartner";
+import RegisterNewAdmin from "../Register/registerNewAdmin";
+import AdminDetails from "../getAllDetails/AdminDetails";
+import AllPartnerDetails from "../getAllDetails/AllPartnerDetails";
+import AllClientDetails from "../getAllDetails/AllClientDetails";
 
 const SuperAdminPage = (props) => {
   const [theme, colorMode] = useMode();
@@ -30,7 +22,6 @@ const SuperAdminPage = (props) => {
   };
 
   return (
-    // <ColorModeContext.Provider value={colorMode}>
     <div className="whole">
       <ThemeProvider theme={theme}>
         <CssBaseline />
@@ -39,21 +30,29 @@ const SuperAdminPage = (props) => {
             <main>
               <Topbar onlogOut={logOut} />
               <Routes>
-                <Route path="/" element={<SuperAdmindashboard />} />
-                <Route path="newPartner" element={<NewPartner />} />
-                <Route path="newClient" element={<NewClient />} />
-                <Route path="clientDetails" element={<ClientDetails />} />
-                <Route path="project" element={<Project />} />
-                <Route path="assignment" element={<Assignment />} />
-                <Route path="smtp" element={<Smtp />} />
+                <Route path="" element={<SuperAdminDashboard />} />
+                <Route path="alladmins" element={<AdminDetails />} />
+                <Route path="allpartners" element={<AllPartnerDetails />} />
+                <Route path="allclients" element={<AllClientDetails />} />
+                <Route path="registernewadmin" element={<RegisterNewAdmin />} />
+                <Route
+                  path="registernewpartner"
+                  element={<RegisterNewPartner />}
+                />
+                <Route
+                  path="registernewclient"
+                  element={<RegisterNewClient />}
+                />
+                <Route
+                  path="clientprofilemanagement"
+                  element={<ClientProfileManagment />}
+                />
               </Routes>
             </main>
           </div>
         </MyProSidebarProvider>
       </ThemeProvider>
     </div>
-
-    // </ColorModeContext.Provider>
   );
 };
 

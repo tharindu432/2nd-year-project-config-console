@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { ApiPath } from "../../API/ApiPath";
-
+import "./LoginPage.css";
 const initialState = {
   username: "",
   password: "",
@@ -72,12 +72,14 @@ const LoginPage = (props) => {
 
   return (
     <div
-      className="container text-center align-items-center justify-content-center"
+      className="container text-center align-items-center justify-content-center padding-auto"
+      // className="whole"
       style={{ width: "750px", marginTop: "150px" }}
     >
+      <h1 style={{ padding: "auto" }}>Welcome to Client Service Module</h1>
       <div className="row mb-3">
-        <div className="col" style={{ textAlign: "justify" }}>
-          <h2>Welcome to Client Service Module</h2>
+        <div className="col" style={{ textAlign: "justify", fontSize: "14x" }}>
+          {/* <h2>Welcome to Client Service Module</h2> */}
 
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -114,11 +116,11 @@ const LoginPage = (props) => {
                   padding: "12px 20px",
                   margin: "8px 0",
                   display: "inline-block",
-                  border: "1px solid #ccc",
                   backgroundColor: "#fff",
                   borderRadius: "4px",
                   boxSizing: "border-box",
                 }}
+                className="email"
               />
 
               <input
@@ -138,10 +140,11 @@ const LoginPage = (props) => {
                   borderRadius: "4px",
                   boxSizing: "border-box",
                 }}
+                className="password"
               />
 
               <input
-                className="btn btn-primary"
+                className="btn-primary"
                 type="submit"
                 value="Login"
                 style={{
@@ -160,18 +163,9 @@ const LoginPage = (props) => {
           </div>
 
           <div>
-            <Link to="/help">
-              <p
-                className="link-primary"
-                style={{
-                  fontSize: "0.85rem",
-                  textAlign: "start",
-                  marginLeft: "35px",
-                }}
-              >
-                Forgot Password ?
-              </p>
-            </Link>
+            <a href="./help" className="help">
+              Forgot Password
+            </a>
           </div>
         </div>
       </div>

@@ -102,9 +102,35 @@ insert into client_detail (first_name, last_name, nic, mobile_no, email, designa
 	('Chathura', 'Vinod', '654510878V', '0714544912', 'chathura@gmail.com', 'General Manager', 'Server E', 4),
 	('Hasitha', 'Manohara', '805520899V', '0774288955', 'hasitha@gmail.com', 'General Manager', 'Server F', 4);
 
+insert into client_detail (first_name, last_name, nic, mobile_no, email, designation, server_name, partner_id) values
+	('Kelum', 'Srinath', '965148239V', '0772546189', 'kelum@gmail.com', 'General Manager', 'Server B', 3),
+	('Sampath', 'Kumara', '991258476V', '0712148790', 'sampath@gmail.com', 'General Manager', 'Server C', 3),
+	('Sasika', 'Sankalana', '200014521426', '0704621789', 'sasika@gmail.com', 'General Manager', 'Server D', 3);
+
 update client_detail set first_name = 'Jagath', last_name = 'Gallage', nic = '864512777V', mobile_no = '0714452122', email = 'jagath@gmail.com' where client_id = 2;
 
 select * from client_detail;
+
+2023/02/25 - Supervisor table
+  
+create table supervisor (
+	id int not null IDENTITY(1, 1),
+	pro_id int not null,
+	sup_id int not null,
+	constraint supervisor_fk_pro_id foreign key(pro_id) references profile(pro_id),
+	constraint supervisor_fk_sup_id foreign key(sup_id) references profile(pro_id),
+	constraint supervisor_pk primary key (id)
+);
+
+insert into supervisor (pro_id, sup_id) values (2, 1), (3, 2), (4, 2); 
+insert into supervisor (pro_id, sup_id) values (19, 2);
+select * from supervisor;
+
+
+
+*****************************************************************************************************************
+*****************************************************************************************************************
+*****************************************************************************************************************
 
 
 create table profile_reportto (
