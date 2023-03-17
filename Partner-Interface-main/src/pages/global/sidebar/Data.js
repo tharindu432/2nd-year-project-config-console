@@ -1,16 +1,17 @@
-// Get User Name (2023/02/05)
-
+import { ApiPath } from "../../../API/ApiPath";
 import React, { useState, Component } from "react";
-import { ApiPath } from "../../API/ApiPath";
+import { Api } from "@mui/icons-material";
+// import FetchCategories from "./data";
+// import  ApiPath  from "../../API/ApiPath";
 
-class NameUser extends Component {
-  constructor(props) {
+class NameUser extends Component{
+  constructor(props){
     super(props);
 
     this.state = {
-      name: "",
-      DataisLoaded: false,
-      va: window.location.pathname.split("/"),
+      name : "",
+      DataisLoaded : false,
+      va : window.location.pathname.split("/"),
     };
   }
 
@@ -24,7 +25,6 @@ class NameUser extends Component {
         });
       });
   }
-
   render() {
     const { DataisLoaded, name } = this.state;
     if (!DataisLoaded)
@@ -46,5 +46,4 @@ class NameUser extends Component {
     );
   }
 }
-
 export default NameUser;

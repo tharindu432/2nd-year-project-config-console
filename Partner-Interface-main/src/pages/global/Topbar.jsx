@@ -9,8 +9,7 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { useProSidebar } from "react-pro-sidebar";
 import "./Topbar.css";
 import { blue, green, red } from "@mui/material/colors";
-
-const Topbar = (props) => {
+const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const navigate = useNavigate();
@@ -42,10 +41,10 @@ const Topbar = (props) => {
         </Box> */}
         <input
           className="inputbase"
-          placeholder="Seacrh for something..."
+          placeholder="Search for something..."
         ></input>
       </Box>
-      <Link to="/" onClick={props.onlogOut}>
+      <Link to="/">
         <button className="toprightbutton">
           <Box display="flex" className="topright">
             <LogoutRounded className="logout" />

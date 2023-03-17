@@ -1,13 +1,15 @@
-import React, { useState, Component } from "react";
-
+import { useState } from "react";
 import { Menu, Sidebar, MenuItem } from "react-pro-sidebar";
-import { BsFillGridFill } from "react-icons/bs";
-import { useTheme, Box, Typography, IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
+import { useProSidebar } from "react-pro-sidebar";
+import "./MyProSidebar.css";
+import { useSidebarContext } from "./sidebarContext";
+import { json, Link } from "react-router-dom";
 import { tokens } from "../../../theme";
-
+import { useTheme, Box, Typography, IconButton } from "@mui/material";
+import { BsFillGridFill } from "react-icons/bs";
+import { Component } from "react";
 import { ApiPath } from "../../../API/ApiPath";
-
+import React from "react";
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -37,16 +39,40 @@ class Options extends Component {
       },
       {
         id: 2,
-        title: "Register New Partner",
-        to: "newPartner",
+        title: "Admins",
+        to: "alladmins",
       },
       {
         id: 3,
+        title: "Partners",
+        to: "allpartners",
+      },
+      {
+        id: 4,
+        title: "Clients",
+        to: "allclients",
+      },
+      {
+        id: 5,
+        title: "Register New Admin",
+        to: "registernewadmin",
+      },
+      {
+        id: 6,
+        title: "Register New Partner",
+        to: "registernewpartner",
+      },
+      {
+        id: 7,
         title: "Register New Client",
-        to: "newClient",
+        to: "registernewclient",
+      },
+      {
+        id: 8,
+        title: "Client Profile Management",
+        to: "clientprofilemanagement",
       },
     ];
-
     const adminOptions = [
       {
         id: 1,
@@ -55,12 +81,12 @@ class Options extends Component {
       },
       {
         id: 2,
-        title: "Partner",
+        title: "My Partners",
         to: "newPartner",
       },
       {
         id: 3,
-        title: "Client",
+        title: "My Clients",
         to: "newClient",
       },
     ];
@@ -132,7 +158,7 @@ class Options extends Component {
     if (!DataisLoaded)
       return (
         <div>
-          <h1> .... </h1>{" "}
+          <h1> .... </h1>
         </div>
       );
     else {
@@ -145,7 +171,7 @@ class Options extends Component {
                 to={menuItem.to}
                 icon={<BsFillGridFill />}
                 selected={selected}
-                setSelected={setSelected}
+                setSelected={selected}
               />
             ))}
           </div>
@@ -181,5 +207,4 @@ class Options extends Component {
     }
   }
 }
-
 export default Options;

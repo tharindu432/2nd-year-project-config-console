@@ -9,9 +9,12 @@ import { MdOutlineModeEditOutline } from "react-icons/md";
 const Projects = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const handleRefresh = () => {
+    window.location.reload();
+  };
   return (
     <Box m="20px">
-      <Box display="flex" justifyContent="space-between" alignItems="center">
+      <Box>
         <h1 className="header">PROJECT</h1>
       </Box>
       <Box
@@ -53,7 +56,7 @@ const Projects = () => {
             <button className="topbutton">Create new project</button>
           </div>
           <div className="secondpart">
-            <button className="refresh">
+            <button className="refresh" onClick={handleRefresh}>
               <HiOutlineRefresh />
               Refresh
             </button>

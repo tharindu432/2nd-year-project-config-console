@@ -4,7 +4,6 @@ import { Menu, Sidebar, MenuItem } from "react-pro-sidebar";
 import { useProSidebar } from "react-pro-sidebar";
 import "./MyProSidebar.css";
 import { useSidebarContext } from "./sidebarContext";
-
 import { Link } from "react-router-dom";
 import { tokens } from "../../../theme";
 import { useTheme, Box, Typography, IconButton } from "@mui/material";
@@ -12,10 +11,12 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import SwitchRightOutlinedIcon from "@mui/icons-material/SwitchRightOutlined";
 import SwitchLeftOutlinedIcon from "@mui/icons-material/SwitchLeftOutlined";
-
+import NameUser from "./Data";
 import Options from "./Options";
-
-import NameUser from "../NameUser";
+import { useEffect } from "react";
+import ClientDetails from "../../clientDetails/ClientDetails";
+import { FaBars } from "react-icons/fa";
+// import {Employee} from "./Data";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -33,13 +34,21 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
     </MenuItem>
   );
 };
-
 const MyProSidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [selected, setSelected] = useState("Dashboard");
+  // const [selected, setSelected] = useState("Dashboard");
   const { sidebarRTL, setSidebarRTL, sidebarImage } = useSidebarContext();
   const { collapseSidebar, toggleSidebar, collapsed, broken } = useProSidebar();
+  const [showMessage, setShowMessage] = useState(false);
+  const message = "Logout";
+  function handleMouseEnter() {
+    setShowMessage(true);
+  }
+
+  function handleMouseLeave() {
+    setShowMessage(false);
+  }
 
   return (
     <Box
@@ -77,7 +86,8 @@ const MyProSidebar = () => {
       <Sidebar
         breakPoint="md"
         rtl={sidebarRTL}
-        backgroundColor={colors.primary[400]}
+        backgroundColor="#2F4050"
+        // backgroundColor={colors.primary[400]}
         image={sidebarImage}
       >
         <Menu iconshape="square">
@@ -109,31 +119,47 @@ const MyProSidebar = () => {
               >
                 <b className="exampleuser">
                   <NameUser />
-                  <b className="menu">menu</b>
                 </b>
-
-                <IconButton
+                <button
+                  style={{
+                    backgroundColor: "#1ab394",
+                    border: "1px solid transparent",
+                    color: "#fff",
+                    borderRadius: "2px",
+                    fontSize: "14px",
+                  }}
                   onClick={
                     broken ? () => toggleSidebar() : () => collapseSidebar()
                   }
                 >
-                  <CloseOutlinedIcon />
-                </IconButton>
+                  <FaBars
+                    style={{
+                      verticalAlign: "middile",
+                      paddingBottom: "5px",
+                      fontSize: "18px",
+                    }}
+                  />
+                </button>
               </Box>
             )}
           </MenuItem>
           {!collapsed && (
-            <Box mb="-5px">
+            <Box>
               <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                sx={{
-                  "& .avater-image": {
-                    backgroundColor: colors.primary[500],
-                  },
-                }}
-              ></Box>
+                style={{ cursor: "pointer" }}
+                marginLeft="70px"
+                marginTop="-20px"
+                paddingBottom="10px"
+              >
+                <b
+                  className="menu"
+                  style={{ color: "grey", verticalAlign: "middle" }}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  Menu {showMessage && message}
+                </b>
+              </Box>
             </Box>
           )}
           <Box paddingLeft={collapsed ? undefined : "0%"} fontSize={12}>

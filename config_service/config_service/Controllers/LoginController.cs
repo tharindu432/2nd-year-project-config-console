@@ -75,5 +75,34 @@ namespace config_service.Controllers
             }
             
         }
+
+        // Add Login Details API (2023/02/28)
+        [HttpPost]
+        [Route("AddLogin")]
+        public JsonResult AddLogin(Login ln)
+        {
+            string q = @"insert into login (username, password, pro_id, desig_id) values (@username, @password, @pid, @did)";
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("ConfigDBConnecion");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(q, myCon))
+                {
+                    myCommand.Parameters.AddWithValue("@username", ln.username);
+                    myCommand.Parameters.AddWithValue("@password", ln.password);
+                    myCommand.Parameters.AddWithValue("@pid", ln.pro_id);
+                    myCommand.Parameters.AddWithValue("@did", ln.desig_id);
+
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(1);
+
+        }
     }
 }

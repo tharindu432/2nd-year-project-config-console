@@ -32,7 +32,8 @@ if (app.Environment.IsDevelopment())
 }
 
 // Enble Cors (2023/01/22)
-app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyHeader());
+// app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyHeader());
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseAuthorization();
 
